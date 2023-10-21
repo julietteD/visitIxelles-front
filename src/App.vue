@@ -8,10 +8,10 @@ const count = ref(0)
 const locations= ref(null)
 const activelocation= ref(null)
 const view = ref('list')
-const blablaOpen = ref('false')
-const isWelcome = ref('true')
+const blablaOpen = ref(false)
+const isWelcome = ref(true)
 const tags= ref(null)
-const isv2= ref('false')
+const isv2= ref(false)
 
 onMounted(() => {
   initLocations()  
@@ -61,17 +61,12 @@ function changeMapPosition(x,y){
 
 
     <div id="mainContent">
+
       <TopHeader />
 
-
       <div class="pageColumns">
-        <div id="searchForm">
-          <form method="GET" action="#">
-            <input type="text" name="search" placeholder="find">
-          </form>
-        </div>
+  
 
-    
         <aside>
           <div id="switchView">
 
@@ -110,9 +105,7 @@ function changeMapPosition(x,y){
           <div v-else>
           <div class="text">
             <h2>{{ activelocation.name }}</h2>
-           tags
-
-          
+           <!-- tags -->
 
           </div>
 
@@ -121,8 +114,8 @@ function changeMapPosition(x,y){
 
           <div class="specialLink">
             <a @click="blablaOpen = !blablaOpen" class="blabla">+ de blaBla</a>
-
           </div>
+
           <div class="blablacontent" v-if="blablaOpen">
             <span class="close" @click="blablaOpen = false"></span>
             {{ activelocation.description }}
