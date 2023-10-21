@@ -48,7 +48,6 @@ function changeMapPosition(x,y){
           let posY = boxheight*y/100 - decY;
          document.getElementById('ixellesMap').scrollTo(posX, posY);
       
-      
    
     }
 </script>
